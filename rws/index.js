@@ -34,11 +34,6 @@ function processSave(dat) {
     document.getElementById("forecast").innerHTML = "Forecast: no lightning.";
     return
   }
-  if (dat.alignment != 3) {
-    document.getElementById("intro").innerHTML = "You are not aligned neutral.";
-    document.getElementById("forecast").innerHTML = "Forecast: no lightning.";
-    return
-  }
   var ownedBuildings = [];
   for (var i = 0; i < bkeys.length; i++) {
     if (dat.build[bkeys[i]].q > 0) {
