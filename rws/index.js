@@ -45,21 +45,6 @@ function processSave(dat) {
       ownedBuildings[ownedBuildings.length] = bnames[i];
     }
   }
-  if (!(dat.faction == 6 || dat.msp == 13 || dat.msp2 == 13)) {
-    document.getElementById("intro").innerHTML = "You don't have lightning strike.";
-    document.getElementById("forecast").innerHTML = "Forecast: no lightning.";
-    return
-  }
-  if (ownedBuildings.length == 0) {
-    document.getElementById("intro").innerHTML = "You have no buildings.";
-    document.getElementById("forecast").innerHTML = "Forecast: no lightning.";
-    return
-  }
-  if (ownedBuildings.length == 1) {
-    document.getElementById("intro").innerHTML = "You only have " + ownedBuildings[0] + ".";
-    document.getElementById("forecast").innerHTML = "Forecast: the only thing you have, as many times as you like.";
-    return
-  }
   var state = dat.spell["s:LightningStrike"].s;
   document.getElementById("intro").innerHTML = "Your RNG state is: " + state + ".";
   document.getElementById("buildings").innerHTML = "You have " + listJoin(ownedBuildings) + ".";
